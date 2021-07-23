@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: lightgray;
+    height: 100vh;
+    padding: 200px;
+}
+.container {
+    margin: auto;
+    width: 50%;
+    height: 200px;
+}
