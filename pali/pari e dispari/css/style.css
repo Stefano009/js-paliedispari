@@ -13,3 +13,9 @@ body {
     width: 50%;
     height: 200px;
 }
+#pari,
+#dispari {
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    background-color: lime;
+}

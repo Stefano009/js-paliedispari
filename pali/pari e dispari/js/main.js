@@ -2,11 +2,13 @@
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 var sumNumber = document.getElementById('sumNumber');
 var deleted = document.getElementById('delete');
+var pari = document.getElementById('pari');
+var dispari = document.getElementById('dispari');
 var cpuNumber = 0;
 var wordArray = [];
 var suppArray = [];
 
-sumNumber.addEventListener('click',
+pari.addEventListener('click',
     function(){
         let userNumber = parseInt(document.getElementById('userNumber').value);
         console.log(userNumber);
@@ -16,17 +18,36 @@ sumNumber.addEventListener('click',
         {
             console.log('number not valid, please retry');
             document.getElementById('number').innerHTML = '<h2>' + 'il numero ' + userNumber + ' non è compreso fra 1 e 5' + '</h2>';
+            return
         }
         // Sommiamo i due numeri
         userNumber += rndNumbers(cpuNumber);
         console.log(userNumber);
-        document.getElementById('number').innerHTML = '<h3>' + oddEven(userNumber) + '</h3>';
+        if (oddEven(userNumber) == 'pari')
+            document.getElementById('number').innerHTML = '<h3>'+ userNumber + ' l\'utente ha vinto' + '</h3>';
+        else
+            document.getElementById('number').innerHTML = '<h3>' + userNumber + ' l\'utente ha perso' + '</h3>';
     }
 )
-deleted.addEventListener('click',
-    function() {
-        document.getElementById('number').innerHTML = '';
-
+dispari.addEventListener('click',
+    function(){
+        let userNumber = parseInt(document.getElementById('userNumber').value);
+        console.log(userNumber);
+        if (userNumber > 0 && userNumber <=5)
+            console.log('bella possiamo procedere')
+        else
+        {
+            console.log('number not valid, please retry');
+            document.getElementById('number').innerHTML = '<h2>' + 'il numero ' + userNumber + ' non è compreso fra 1 e 5' + '</h2>';
+            return
+        }
+        // Sommiamo i due numeri
+        userNumber += rndNumbers(cpuNumber);
+        console.log(userNumber);
+        if (oddEven(userNumber) == 'dispari')
+            document.getElementById('number').innerHTML = '<h3>' + userNumber + ' l\'utente ha vinto' + '</h3>';
+        else
+            document.getElementById('number').innerHTML = '<h3>' + userNumber + ' l\'utente ha perso' + '</h3>';
     }
 )
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
@@ -43,9 +64,6 @@ function oddEven(userNumber) {
     else 
         return 'dispari';
 }
-
-
-
 // Dichiariamo chi ha vinto.
 
 // Consigli del giorno
