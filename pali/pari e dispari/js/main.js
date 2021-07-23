@@ -5,9 +5,6 @@ var deleted = document.getElementById('delete');
 var cpuNumber = 0;
 var wordArray = [];
 var suppArray = [];
-var oddEven;
-var reset;
-var flag = false;
 
 sumNumber.addEventListener('click',
     function(){
@@ -34,10 +31,7 @@ deleted.addEventListener('click',
 )
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 function rndNumbers(cpuNumber) {
-    var cpuSumNumber = Math.floor(Math.random() * 5) + 1;
-    console.log(cpuSumNumber);
-    return cpuSumNumber;
-    
+    return Math.floor(Math.random() * 5) + 1;
 }
 // console.log(rndNumbers(cpuNumber));
 
@@ -45,11 +39,9 @@ function rndNumbers(cpuNumber) {
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 function oddEven(userNumber) {
     if (userNumber % 2 == 0)
-        oddEven = "pari";
+        return "pari";
     else 
-        oddEven = 'dispari';
-
-    return oddEven;
+        return 'dispari';
 }
 
 
